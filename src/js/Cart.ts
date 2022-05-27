@@ -7,7 +7,18 @@ export class Cart {
   	this.items.push(item);
   }
 
-  show(): void {
+  show(): Movie[] {
   	console.log(this.items);
+    return this.items;
+  }
+
+  countingWithDiscount(discount: number): number {
+    const sum = this.items.length * 250 * (discount / 100);
+    return sum;
+  }
+
+  counting(): number {
+    const sum = this.items.length * 250;
+    return sum;
   }
 }
