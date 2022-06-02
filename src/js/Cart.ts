@@ -13,12 +13,18 @@ export class Cart {
   }
 
   countingWithDiscount(discount: number): number {
-    const sum = this.items.length * 250 * (discount / 100);
+    let sum = 0;
+    this.items.forEach(elem => {
+      sum += elem.price * (1 - (discount / 100));
+    });
     return sum;
   }
 
   counting(): number {
-    const sum = this.items.length * 250;
+    let sum = 0;
+    this.items.forEach(elem => {
+      sum += elem.price;
+    });
     return sum;
   }
 }

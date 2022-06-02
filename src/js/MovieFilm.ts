@@ -4,5 +4,6 @@ export default interface MovieFilm {
   country: string,
   slogan: string,
   genre: String[],
-  time: string
+  time: string,
+  price: number
 }

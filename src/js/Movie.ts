@@ -7,6 +7,7 @@ export default class Movie implements MovieFilm {
 	readonly country: string,
 	readonly slogan: string,
 	readonly genre: String[],
-	readonly time: string
+	readonly time: string,
+	readonly price: number
 	) { }
 }
