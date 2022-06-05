@@ -9,17 +9,22 @@ test('testing show func', () => {
 	'USA', 
 	'Avengers Assemble!', 
 	['фантастика', 'боевик', 'триллер'], 
-	'137 мин / 02:17'
+	'137 мин / 02:17',
+	1000
 	);
   cart.add(movie);
+  
+  const expected = [{
+    name: 'Avangers',
+    year: 2012,
+    country: 'USA',
+    slogan: 'Avengers Assemble!',
+    genre: [ 'фантастика', 'боевик', 'триллер' ],
+    time: '137 мин / 02:17',
+    price: 1000 }
+    ];
 
-  expect(cart.show()).toEqual([
-  	'Avangers', 
-	2012, 
-	'USA', 
-	'Avengers Assemble!', 
-	['фантастика', 'боевик', 'триллер'], 
-	'137 мин / 02:17']);
+  expect(cart.show()).toEqual(expected);
 });
 
 test('testing countingWithDiscount func func', () => {
@@ -91,5 +96,5 @@ cart.add(movie);
 cart.add(movie3);
 cart.add(movie2);
 
-expect(cart.countingWithDiscount(4)).toEqual(6000);
+expect(cart.counting()).toEqual(6000);
 });
